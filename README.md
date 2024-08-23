@@ -34,7 +34,7 @@ Programa anterior aprimorado usando Stream API do Java para processar as transa�
 
 ## Conta Bancária com Construtor em POO
 
-Você está desenvolvendo um programa simples em Java para representar uma conta bancária. Utilizando programação orientada a objetos (POO), você criará uma classe ContaBancaria com um construtor que permitirá a inicialização da conta com um saldo inicial.
+Desenvolver um programa simples em Java para representar uma conta bancária. Utilizando programação orientada a objetos (POO), você criará uma classe ContaBancaria com um construtor que permitirá a inicialização da conta com um saldo inicial.
 
 **Entrada**
 * O programa solicitará ao usuário que informe o saldo inicial da conta.

@@ -14,26 +14,30 @@ public class RegistroTransacoesComStream {
         List<Transacao> transacoes = new ArrayList<>();
 
         for (int i = 1; i <= quantidadeTransacoes; i++) {
-          
             char tipoTransacao = scanner.next().charAt(0);
             double valorTransacao = scanner.nextDouble();
 
             // TODO: Criar uma nova transação e adicioná-la à lista de transações
-            Transacao transacao = null;
+            // Criação correta da transação
+            Transacao transacao = new Transacao(tipoTransacao, valorTransacao);
+            transacoes.add(transacao);
 
-            // Verifica e atualiza o saldo da conta com base no tipo de transação
-            if (transacao.getTipo().toUpperCase() == 'D') {
+            // Verifica e atualiza o saldo da conta com base no tipo de transação (case-insensitive)
+            char tipoUpper = Character.toUpperCase(transacao.getTipo());
+            if (tipoUpper == 'D') {
                 saldo += valorTransacao;
-            } else if (transacao.getTipo().toUpperCase() == 'S') {
+            } else if (tipoUpper == 'S') {
                 saldo -= valorTransacao;
             }
         }
 
-        System.out.println("\nSaldo : " + saldo);
-        System.out.println("\nTransacoes:");
+        // Formatação do saldo com uma casa decimal
+        System.out.printf("Saldo : %.1f%n", saldo);
+        System.out.println("Transacoes:");
+
+        // Formatação das transações conforme esperado nos testes
         transacoes.stream()
-                .map(transacao -> "TODO: Formatar a Saída (tipo e valor) de acordo com os Exemplos.")
-                .collect(Collectors.toList())
+                .map(t -> String.format("%c de %.1f", t.getTipo(), t.getValor()))
                 .forEach(System.out::println);
 
         // Fechar o scanner para evitar vazamentos de recursos
