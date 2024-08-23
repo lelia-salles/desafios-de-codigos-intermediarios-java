@@ -62,3 +62,8 @@ class Transacao {
         return valor;
     }
 }
+
+    public double getValor() {
+        return valor;
+    }
+}
